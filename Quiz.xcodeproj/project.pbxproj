@@ -200,15 +200,18 @@
 					42DD0A011C4AEEC200E3001B = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 97ZKD9Z298;
+						LastSwiftMigration = 0820;
 					};
 					42DD0A151C4AEEC200E3001B = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 97ZKD9Z298;
+						LastSwiftMigration = 0820;
 						TestTargetID = 42DD0A011C4AEEC200E3001B;
 					};
 					42DD0A201C4AEEC200E3001B = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 97ZKD9Z298;
+						LastSwiftMigration = 0820;
 						TestTargetID = 42DD0A011C4AEEC200E3001B;
 					};
 				};
@@ -412,6 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danjesus.github.io.Quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -423,6 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danjesus.github.io.Quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -434,6 +439,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danjesus.github.io.QuizTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quiz.app/Quiz";
 			};
 			name = Debug;
@@ -446,6 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danjesus.github.io.QuizTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quiz.app/Quiz";
 			};
 			name = Release;
@@ -457,6 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danjesus.github.io.QuizUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Quiz;
 				USES_XCTRUNNER = YES;
 			};
@@ -469,6 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.danjesus.github.io.QuizUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Quiz;
 				USES_XCTRUNNER = YES;
 			};
@@ -493,6 +502,7 @@
 				42DD0A2C1C4AEEC200E3001B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42DD0A2D1C4AEEC200E3001B /* Build configuration list for PBXNativeTarget "QuizTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +511,7 @@
 				42DD0A2F1C4AEEC200E3001B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42DD0A301C4AEEC200E3001B /* Build configuration list for PBXNativeTarget "QuizUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +520,7 @@
 				42DD0A321C4AEEC200E3001B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

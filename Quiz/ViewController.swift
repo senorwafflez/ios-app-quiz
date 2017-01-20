@@ -112,66 +112,66 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func chooseAnswer1(sender: AnyObject) {
+    @IBAction func chooseAnswer1(_ sender: AnyObject) {
         selectAnswer(0)
     }
     
-    @IBAction func chooseAnswer2(sender: AnyObject) {
+    @IBAction func chooseAnswer2(_ sender: AnyObject) {
         selectAnswer(1)
     }
     
-    @IBAction func chooseAnswer3(sender: AnyObject) {
+    @IBAction func chooseAnswer3(_ sender: AnyObject) {
         selectAnswer(2)
     }
     
-    @IBAction func chooseAnswer4(sender: AnyObject) {
+    @IBAction func chooseAnswer4(_ sender: AnyObject) {
         selectAnswer(3)
     }
     
     func startQuiz() -> Void {
         questions.shuffle()
         
-        for(var i=0; i < questions.count; i++) {
+        for i in 0 ..< questions.count {
             questions[i].answers.shuffle()
         }
         
         quizEnded = false
         grade = 0.0
         currentQuestion = 0
-        viewFeddback.hidden = true
+        viewFeddback.isHidden = true
         
         showQuestion(0)
     }
     
-    func showQuestion(questionId : Int) -> Void {
+    func showQuestion(_ questionId : Int) -> Void {
         enableButtons()
         
         let selectedQuestion : Question = questions[questionId]
         question.text = selectedQuestion.question
         imgQuestion.image = selectedQuestion.img
         
-        answer1.setTitle(selectedQuestion.answers[0].response, forState: UIControlState.Normal)
-        answer2.setTitle(selectedQuestion.answers[1].response, forState: UIControlState.Normal)
-        answer3.setTitle(selectedQuestion.answers[2].response, forState: UIControlState.Normal)
+        answer1.setTitle(selectedQuestion.answers[0].response, for: UIControlState())
+        answer2.setTitle(selectedQuestion.answers[1].response, for: UIControlState())
+        answer3.setTitle(selectedQuestion.answers[2].response, for: UIControlState())
     }
     
     func disableButtons() -> Void {
-        answer1.enabled = false
-        answer2.enabled = false
-        answer3.enabled = false
-        answer4.enabled = false
-        question.hidden = true
+        answer1.isEnabled = false
+        answer2.isEnabled = false
+        answer3.isEnabled = false
+        answer4.isEnabled = false
+        question.isHidden = true
     }
     
     func enableButtons() -> Void {
-        answer1.enabled = true
-        answer2.enabled = true
-        answer3.enabled = true
-        answer4.enabled = true
-        question.hidden = false
+        answer1.isEnabled = true
+        answer2.isEnabled = true
+        answer3.isEnabled = true
+        answer4.isEnabled = true
+        question.isHidden = false
     }
     
-    func selectAnswer(answerId : Int) -> Void {
+    func selectAnswer(_ answerId : Int) -> Void {
         disableButtons()
         
         let answer : Answer = questions[currentQuestion].answers[answerId]
@@ -179,25 +179,25 @@ class ViewController: UIViewController {
         if (true == answer.isRight) {
             grade += 1.0
             feedbackText.text = answer.response + "\n\nResposta correta!"
-            viewFeddback.backgroundColor = UIColor.greenColor()
-            feedbackText.textColor = UIColor.blackColor()
+            viewFeddback.backgroundColor = UIColor.green
+            feedbackText.textColor = UIColor.black
         } else {
-            viewFeddback.backgroundColor = UIColor.redColor()
+            viewFeddback.backgroundColor = UIColor.red
             feedbackText.text = answer.response + "\n\nResposta incorreta!"
-            feedbackText.textColor = UIColor.whiteColor()
+            feedbackText.textColor = UIColor.white
         }
         
         if (currentQuestion < questions.count-1) {
-            feedbackButton.setTitle("Próxima", forState: UIControlState.Normal)
+            feedbackButton.setTitle("Próxima", for: UIControlState())
         } else {
-            feedbackButton.setTitle("Ver nota", forState: UIControlState.Normal)
+            feedbackButton.setTitle("Ver nota", for: UIControlState())
         }
         
-        viewFeddback.hidden = false
+        viewFeddback.isHidden = false
     }
     
-    @IBAction func sendFeedback(sender: AnyObject) {
-        viewFeddback.hidden = true
+    @IBAction func sendFeedback(_ sender: AnyObject) {
+        viewFeddback.isHidden = true
         
         if (true == quizEnded) {
             startQuiz()
@@ -207,7 +207,7 @@ class ViewController: UIViewController {
     }
     
     func nextQuestion() {
-        currentQuestion++
+        currentQuestion += 1
         
         if (currentQuestion < questions.count) {
             showQuestion(currentQuestion)
@@ -219,14 +219,14 @@ class ViewController: UIViewController {
     func endQuiz() {
         grade = grade / Double(questions.count) * 100.0
         quizEnded = true
-        viewFeddback.hidden = false
+        viewFeddback.isHidden = false
         
-        viewFeddback.backgroundColor = UIColor.whiteColor()
-        feedbackText.textColor = UIColor.blackColor()
+        viewFeddback.backgroundColor = UIColor.white
+        feedbackText.textColor = UIColor.black
     
         
         feedbackText.text = "Sua nota \(round(grade))"
-        feedbackButton.setTitle("Refazer", forState: UIControlState.Normal)
+        feedbackButton.setTitle("Refazer", for: UIControlState())
     }
     
 }
